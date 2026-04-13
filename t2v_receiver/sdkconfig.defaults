@@ -1,0 +1,47 @@
+# ============================================================
+# T2V 수신기 SDK 기본 설정 (ESP32-S3)
+# ============================================================
+
+# 플래시 크기: 4MB (ESP32-S3 Super Mini 기본값)
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
+
+# 로그 레벨: INFO (디버그 시 DEBUG로 변경 가능)
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+CONFIG_LOG_DEFAULT_LEVEL=3
+
+# FreeRTOS 태스크 이름 표시 (디버깅 편의)
+CONFIG_FREERTOS_USE_TRACE_FACILITY=y
+
+# ── BLE NimBLE 설정 ──────────────────────────────────────────
+# Bluetooth 컨트롤러 및 호스트 활성화
+CONFIG_BT_ENABLED=y
+
+# NimBLE 호스트 스택 선택 (Bluedroid 대신)
+CONFIG_BT_NIMBLE_ENABLED=y
+
+# Bluedroid 비활성화 (NimBLE과 동시 사용 불가)
+CONFIG_BT_BLUEDROID_ENABLED=n
+
+# NimBLE 퍼리페럴(GATT 서버) 역할 활성화
+CONFIG_BT_NIMBLE_ROLE_PERIPHERAL=y
+
+# NimBLE 최대 동시 연결 수
+CONFIG_BT_NIMBLE_MAX_CONNECTIONS=1
+
+# ── TinyUSB CDC 설정 ──────────────────────────────────────────
+# TinyUSB 스택 활성화 (ESP32-S3 내장 USB OTG 컨트롤러 사용)
+CONFIG_TINYUSB_ENABLED=y
+
+# CDC (가상 시리얼 포트) 클래스 활성화
+CONFIG_TINYUSB_CDC_ENABLED=y
+
+# CDC RX/TX 버퍼 크기 (기본 64바이트로 충분)
+CONFIG_TINYUSB_CDC_RX_BUFSIZE=64
+CONFIG_TINYUSB_CDC_TX_BUFSIZE=64
+
+# ── 디버그 로그 출력: UART0 (TX: IO43) ───────────────────────
+# USB 포트가 CDC로 사용되므로 USB Serial/JTAG 대신 UART0으로 로그 출력
+CONFIG_ESP_CONSOLE_UART_DEFAULT=y
+CONFIG_ESP_CONSOLE_UART_NUM=0
+CONFIG_ESP_CONSOLE_UART_BAUDRATE=115200

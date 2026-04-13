@@ -1,0 +1,35 @@
+# ============================================================
+# T2V 송신기 SDK 기본 설정 (ESP32-S3)
+# ============================================================
+
+# 플래시 크기: 4MB (ESP32-S3 Super Mini 기본값)
+CONFIG_ESPTOOLPY_FLASHSIZE_4MB=y
+CONFIG_ESPTOOLPY_FLASHSIZE="4MB"
+
+# 로그 레벨: INFO (디버그 시 DEBUG로 변경 가능)
+CONFIG_LOG_DEFAULT_LEVEL_INFO=y
+CONFIG_LOG_DEFAULT_LEVEL=3
+
+# FreeRTOS 태스크 이름 표시 (디버깅 편의)
+CONFIG_FREERTOS_USE_TRACE_FACILITY=y
+
+# USB Serial/JTAG 콘솔 사용 (ESP32-S3 Super Mini — USB로 키 입력 받기)
+# UART 콘솔 비활성화, USB Serial/JTAG을 기본 콘솔로 설정
+CONFIG_ESP_CONSOLE_UART_NONE=y
+CONFIG_ESP_CONSOLE_USB_SERIAL_JTAG=y
+
+# ── BLE NimBLE 설정 ──────────────────────────────────────────
+# Bluetooth 컨트롤러 및 호스트 활성화
+CONFIG_BT_ENABLED=y
+
+# NimBLE 호스트 스택 선택 (Bluedroid 대신)
+CONFIG_BT_NIMBLE_ENABLED=y
+
+# Bluedroid 비활성화 (NimBLE과 동시 사용 불가)
+CONFIG_BT_BLUEDROID_ENABLED=n
+
+# NimBLE 퍼리페럴(GATT 서버) 역할 활성화
+CONFIG_BT_NIMBLE_ROLE_PERIPHERAL=y
+
+# NimBLE 최대 동시 연결 수
+CONFIG_BT_NIMBLE_MAX_CONNECTIONS=1

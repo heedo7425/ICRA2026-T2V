@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>t2v_node</name>
+  <version>0.1.0</version>
+  <description>T2V USB CDC 수신기 → ROS1 토픽 브릿지</description>
+
+  <maintainer email="hmcl@todo.todo">hmcl</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>rospy</build_depend>
+
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>rospy</exec_depend>
+</package>
